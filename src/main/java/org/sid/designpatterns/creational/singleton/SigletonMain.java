@@ -19,6 +19,10 @@ public class SigletonMain {
 
     LazySingleton lazySingleton = LazySingleton.getInstance();
 
+    StaticBlockSingleton staticBlockSingleton = StaticBlockSingleton.getInstance();
+
+    BillPughSingleton billPughSingleton = BillPughSingleton.getInstace();
+
     /**
      * Fetches the value of a string but the drawback is
      * The instance is created irrespective of it is required in runtime or not.
@@ -26,7 +30,7 @@ public class SigletonMain {
      * @return String
      */
     @GetMapping("/eagersingleton")
-    public ResponseEntity<String> eagerDisplay() {
+    public ResponseEntity<String> eagerSingletonCreation() {
         return new ResponseEntity<>(eagerSingleton.display(), HttpStatus.OK);
     }
 
@@ -36,7 +40,27 @@ public class SigletonMain {
      * @return String
      */
     @GetMapping("/lazysingleton")
-    public ResponseEntity<String> lazyDisplay() {
+    public ResponseEntity<String> lazySingletonCreation() {
         return new ResponseEntity<>(lazySingleton.display(), HttpStatus.OK);
+    }
+
+    /**
+     * Demo for static block singleton initialization
+     *
+     * @return String
+     */
+    @GetMapping("/staticblocksingleton")
+    public ResponseEntity<String> staticBlockSingletonCreation() {
+        return new ResponseEntity<>(staticBlockSingleton.display(), HttpStatus.OK);
+    }
+
+    /**
+     * Demo for how to create a singleton instance using bill pugh approach
+     *
+     * @return String
+     */
+    @GetMapping("/billpughsingleton")
+    public ResponseEntity<String> billPughSingletonCreation() {
+        return new ResponseEntity<>(billPughSingleton.display(), HttpStatus.OK);
     }
 }

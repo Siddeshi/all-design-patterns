@@ -4,11 +4,10 @@ public class SedanCar extends Car {
 
     public SedanCar() {
         super(CarType.SEDAN);
-        construct();
     }
 
     @Override
-    protected void construct() {
+    public void construct() {
         System.out.println("building sedan car");
     }
 }

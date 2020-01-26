@@ -14,7 +14,8 @@ public class FactoryMain {
         if ("small".equals(carType)) {
             CarFactory.buildCar(CarType.SMALL);
         } else if ("sedan".equals(carType)) {
-            CarFactory.buildCar(CarType.SEDAN);
+            Car car = CarFactory.buildCar(CarType.SEDAN);
+            car.construct();
         } else if ("luxury".equals(carType)) {
             CarFactory.buildCar(CarType.LUXURY);
         }

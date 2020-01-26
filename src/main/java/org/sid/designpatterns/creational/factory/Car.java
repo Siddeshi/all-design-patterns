@@ -10,6 +10,7 @@ public abstract class Car {
     }
 
     private void arrangeParts() {
+        System.out.println("arranging parts");
     }
 
     protected abstract void construct();
